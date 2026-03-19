@@ -1,5 +1,5 @@
 {
-  "id": "b27c4cfb-c284-4334-b34d-04f453b133f3",
+  "id": "e637e75f-c229-4f36-8032-43d1ed118f11",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -25,33 +25,33 @@
             "cycle": false
           }
         },
-        "cod": {
-          "name": "cod",
+        "code": {
+          "name": "code",
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
         },
         "name": {
           "name": "name",
-          "type": "varchar(50)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
         "description": {
           "name": "description",
-          "type": "varchar(225)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "created-at": {
-          "name": "created-at",
+        "created_at": {
+          "name": "created_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
         },
-        "updated-at": {
-          "name": "updated-at",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
@@ -62,11 +62,11 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "departments_cod_unique": {
-          "name": "departments_cod_unique",
+        "departments_code_unique": {
+          "name": "departments_code_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "cod"
+            "code"
           ]
         }
       },
@@ -95,39 +95,39 @@
             "cycle": false
           }
         },
-        "department_Id": {
-          "name": "department_Id",
+        "department_id": {
+          "name": "department_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
         "name": {
           "name": "name",
-          "type": "varchar(50)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
-        "cod": {
-          "name": "cod",
+        "code": {
+          "name": "code",
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
         },
         "description": {
           "name": "description",
-          "type": "varchar(225)",
+          "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
-        "created-at": {
-          "name": "created-at",
+        "created_at": {
+          "name": "created_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
         },
-        "updated-at": {
-          "name": "updated-at",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
@@ -136,12 +136,12 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "subjects_department_Id_departments_id_fk": {
-          "name": "subjects_department_Id_departments_id_fk",
+        "subjects_department_id_departments_id_fk": {
+          "name": "subjects_department_id_departments_id_fk",
           "tableFrom": "subjects",
           "tableTo": "departments",
           "columnsFrom": [
-            "department_Id"
+            "department_id"
           ],
           "columnsTo": [
             "id"
@@ -152,11 +152,11 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "subjects_cod_unique": {
-          "name": "subjects_cod_unique",
+        "subjects_code_unique": {
+          "name": "subjects_code_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "cod"
+            "code"
           ]
         }
       },
